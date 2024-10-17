@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bottom Navigation Example</title>
+    <link rel="stylesheet" href="quizs.css" />
+  </head>
+  <script
+    src="https://kit.fontawesome.com/9cd0f99006.js"
+    crossorigin="anonymous"
+  ></script>
+  <body>
+    <div id="content">
+      <div id="home" class="content-section">Home</div>
+      <div id="menu" class="content-section hidden">
+        <!-- Menu Header -->
+        <div class="menu-header">
+          <div class="menu-quiz-leaderboard">
+            <button style="border: 0;" id="add-questions-btn">Add Questions</button>
+            <button style="border: 0;" id="leaderboard-btn">Leaderboard</button>
+            <button style="border: 0;" id="play-quiz-btn">Play Quiz</button>
+          </div>
+        </div>
+        <!-- Modal Structure -->
+        <div id="success-modal" class="modal hidden">
+          <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <p id="modal-message">Question added successfully!</p>
+          </div>
+        </div>
+        <!-- Modal Structure -->
+        <div id="success-custom-modal" class="custom-modal hidden">
+          <div class="custom-modal-content">
+            <span class="custom-close-btn">&times;</span>
+            <p id="custom-modal-message">
+              Your score has been added to the leaderboard!
+            </p>
+          </div>
+        </div>
+
+        <!-- Menu Body -->
+        <div class="menu-body" id="menu-body"></div>
+      </div>
+
+      <div id="profile" class="content-section hidden">
+        <div class="profile-header">
+          <h2>Profile</h2>
+        </div>
+        <div class="profile-body">
+          <div class="profile-photo">
+            <div class="profile-photo">
+              <img id="profile-pic" src="profile.png" alt="Profile Picture" />
+            </div>
+            <button id="changePhotoBtn">Change Photo</button>
+
+            <!-- Modal -->
+            <div id="photoModal" class="custom-modal hidden">
+              <div class="custom-modal-content">
+                <span id="closeModalBtn" class="custom-close-btn">&times;</span>
+                <h3>Import Photo</h3>
+                <div class="custom-file-input">
+                  <input type="file" id="photoInput" accept="image/*" />
+                  <label for="photoInput">Choose a photo</label>
+                </div>
+                <span id="fileName" class="file-name">No file chosen</span>
+                <button id="importPhotoBtn">Import</button>
+              </div>
+            </div>
+
+            <!-- Profile Photo -->
+          </div>
+
+          <button id="charge1">Charge</button>
+          <div id="qrModal1" class="modal1">
+            <div class="modal-content1">
+              <span class="close1">&times;</span>
+              <h2>Scan the QR Code for Charge</h2>
+              <img src="qr.jpg" alt="QR Code" id="qrCodeImage1" />
+            </div>
+          </div>
+
+          <div id="qr-modal" class="modal-hidden"></div>
+          <div class="profile-info">
+            <h3>Account Information</h3>
+            <form id="change-password-form">
+              <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+              />
+              <input
+                type="password"
+                id="current-password"
+                placeholder="Enter current password"
+                required
+              />
+
+              <input
+                type="password"
+                id="new-password"
+                placeholder="Enter new password"
+                required
+              />
+
+              <button type="submit">Change Password</button>
+            </form>
+
+            <!-- Feedback banner -->
+            <div id="feedback-banner" class="feedback-banner hidden"></div>
+          </div>
+          <!-- Button to trigger the modal -->
+          <button id="birthday-quiz-btn" class="birthday">Birthday</button>
+
+          <!-- The Modal -->
+          <div id="birthday-modal" class="modal2">
+            <div class="modal-content2">
+              <span id="close-modal2" class="close2">&times;</span>
+              <input type="date" id="birthday-input" required />
+              <button id="search-birthday">Search</button>
+              <div id="search-results"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="home-intro" class="intro-section">
+        <h1>Welcome to Jak World!</h1>
+        <p>
+          Та шидэт үг таагаад шагналаа ав
+        </p>
+      </div>
+      <div id="bottom-nav">
+        <button id="home-btn">Home</button>
+        <button id="menu-btn">Menu</button>
+        <button id="profile-btn">Profile</button>
+      </div>
+    </div>
+    <div class="quiz-container">
+      <h3>Play Quiz</h3>
+      <p>Get ready to start the quiz!</p>
+      <button id="start-quiz-btn" class="start-quiz-button">Start Quiz</button>
+      <div id="quiz-content" class="quiz-content hidden"></div>
+      <div id="feedback-banner" class="feedback-banner hidden"></div>
+    </div>
+
+    <script src="./quizs.js"></script>
+  </body>
+</html>
